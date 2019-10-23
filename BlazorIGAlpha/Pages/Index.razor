@@ -1,0 +1,154 @@
+﻿@page "/"
+@using Infragistics.Blazor.Controls;
+@using BlazorIGAlpha.Services;
+@inject CategoryChartService service
+
+
+<GeographicMap Width="500px" Height="500px" @ref=map>
+    <GeographicSymbolSeries DataSource=@data
+                            Name="series1"
+                            LatitudeMemberPath="y"
+                            LongitudeMemberPath="x"
+                            MarkerType="@MarkerType.Diamond"
+                            MarkerBrush="red" />
+    <GeographicShapeSeries DataSource=@data
+                           Name="series2"
+                           ShapeMemberPath="Shape"
+                           ShapeFill="blue"
+                           ShapeStroke="white" />
+</GeographicMap>
+
+<CategoryChart Width="500px" Height="500px" DataSource="@data">
+
+</CategoryChart>
+
+<LiveGrid DataSource="@service.LargeSixDataPtCollection" Width="500px" Height="500px"></LiveGrid>
+
+@*<RadialGauge MinorTickCount="0" Interval="20" Height="300px" Width="300px"
+                 Value="75" MaximumValue="100" MinimumValue="0">
+        <RadialGaugeRange Brush="red" EndValue="30" StartValue="0" />
+        <RadialGaugeRange Brush="yellow" EndValue="60" StartValue="31" />
+        <RadialGaugeRange Brush="green" EndValue="100" StartValue="61" />
+    </RadialGauge>*@
+
+
+@*<RadialGauge Height="300px" Width="300px" Interval="1" LabelExtent="0.42" MaximumValue="13"
+                 NeedleBaseFeatureExtent="-0.13" NeedleBaseFeatureWidthRatio="0.08" NeedleEndExtent="0.48" NeedleEndWidthRatio="0.02"
+                 NeedlePivotStrokeThickness="0" NeedlePointFeatureExtent="0.18" NeedlePointFeatureWidthRatio="0"
+                 NeedleStartExtent="-0.2" NeedleStartWidthRatio="0.05" NeedleStrokeThickness="0"
+                 BackingBrush="#FFFFFF" BackingOutline="#FFFFFF" MinorTickBrush="#000000" NeedleBrush="#00C6A8" NeedleOutline="#FFFFFF"
+                 NeedlePivotBrush="#FF3B37" NeedlePivotOutline="#FFFFFF" TickBrush="#000000" >
+        <RadialGaugeRange EndValue="1" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.55" OuterStartExtent="0.5" StartValue="0" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="2" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.56" OuterStartExtent="0.55" StartValue="1" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="3" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.57" OuterStartExtent="0.56" StartValue="2" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="4" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.58" OuterStartExtent="0.57" StartValue="3" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="5" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.59" OuterStartExtent="0.58" StartValue="4" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="6" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.6" OuterStartExtent="0.59" StartValue="5" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="7" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.61" OuterStartExtent="0.6" StartValue="6" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="8" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.62" OuterStartExtent="0.61" StartValue="7" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="9" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.63" OuterStartExtent="0.62" StartValue="8" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="10" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.64" OuterStartExtent="0.63" StartValue="9" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="11" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.65" OuterStartExtent="0.64" StartValue="10" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="12" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.66" OuterStartExtent="0.65" StartValue="11" StrokeThickness="1.75" />
+        <RadialGaugeRange EndValue="13" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.67" OuterStartExtent="0.66" StartValue="12" StrokeThickness="1.75" />
+    </RadialGauge>*@
+
+
+@code {
+    private TestData data = new TestData();
+
+    private GeographicMap map;
+
+    public class TestData : List<TestDataItem>
+    {
+        public TestData()
+        {
+            TestDataItem item = new TestDataItem();
+            item.x = 0;
+            item.y = 0;
+            item.Value = 1;
+            item.Shape = CreateShape(0, 0);
+            Add(item);
+            item = new TestDataItem();
+            item.x = 10;
+            item.y = 10;
+            item.Value = 10;
+            item.Shape = CreateShape(10, 10);
+            Add(item);
+            item = new TestDataItem();
+            item.x = 20;
+            item.y = 20;
+            item.Value = 20;
+            item.Shape = CreateShape(20, 20);
+            Add(item);
+            item = new TestDataItem();
+            item.x = 30;
+            item.y = 30;
+            item.Value = 30;
+            item.Shape = CreateShape(30, 30);
+            Add(item);
+            item = new TestDataItem();
+            item.x = 40;
+            item.y = 40;
+            item.Value = 40;
+            item.Shape = CreateShape(40, 40);
+            Add(item);
+            item = new TestDataItem();
+            item.x = 50;
+            item.y = 50;
+            item.Value = 50;
+            item.Shape = CreateShape(50, 50);
+            Add(item);
+        }
+
+        public TestDataItem[][] CreateShape(double x, double y)
+        {
+            TestDataItem[][] ret = new TestDataItem[1][];
+            ret[0] = new TestDataItem[5];
+            TestDataItem item = new TestDataItem();
+            item.x = x;
+            item.y = y;
+            ret[0][0] = item;
+            item = new TestDataItem();
+            item.x = x + 5;
+            item.y = y;
+            ret[0][1] = item;
+            item = new TestDataItem();
+            item.x = x + 5;
+            item.y = y + 5;
+            ret[0][2] = item;
+            item = new TestDataItem();
+            item.x = x;
+            item.y = y + 5;
+            ret[0][3] = item;
+            item = new TestDataItem();
+            item.x = x;
+            item.y = y;
+            ret[0][4] = item;
+
+            return ret;
+        }
+
+    }
+
+    public class TestDataItem
+    {
+        public double x
+        {
+            get; set;
+        }
+        public double y
+        {
+            get; set;
+        }
+        public double Value
+        {
+            get; set;
+        }
+        public TestDataItem[][] Shape
+        {
+            get; set;
+        }
+    }
+
+}
