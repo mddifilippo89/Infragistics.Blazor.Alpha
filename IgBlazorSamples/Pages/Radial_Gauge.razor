@@ -1,0 +1,61 @@
+﻿@page "/radial-gauge"
+@using Infragistics.Blazor.Controls;
+
+<h1>Radial Gauge</h1>
+
+@*<RadialGauge Width="500px" Height="500px" IsNeedleDraggingEnabled="true"
+             Interval="5"
+             MinimumValue="0"
+             MaximumValue="10"
+             Value="8"
+             ScaleStartAngle="180" ScaleEndAngle="0"
+             BackingShape="RadialGaugeBackingShape.Fitted"
+             BackingOutline="blue" BackingBrush="transparent"
+             ScaleBrush="transparent"
+             NeedleShape="RadialGaugeNeedleShape.Needle"
+             NeedlePivotShape="RadialGaugePivotShape.CircleOverlay"
+             NeedleEndExtent="0.55" NeedleBaseFeatureExtent="0.3"
+             NeedleBaseFeatureWidthRatio="0.2" TickBrush="gray"
+             MinorTickBrush="gray"
+             LabelInterval="1">
+    <RadialGaugeRange StartValue="0"
+                      EndValue="3"
+                      Brush="green"
+                      OuterStartExtent="0.6"
+                      OuterEndExtent="0.66" />
+    <RadialGaugeRange StartValue="3"
+                      EndValue="7"
+                      Brush="yellow"
+                      OuterStartExtent="0.66"
+                      OuterEndExtent="0.72" />
+    <RadialGaugeRange StartValue="7"
+                      EndValue="10"
+                      Brush="red"
+                      OuterStartExtent="0.72"
+                      OuterEndExtent="0.78" />
+</RadialGauge>*@
+
+<RadialGauge Height="600px" Width="600px" Interval="1" LabelExtent="0.42" MaximumValue="13" IsNeedleDraggingEnabled="true"
+             NeedleBaseFeatureExtent="-0.13" NeedleBaseFeatureWidthRatio="0.08" NeedleEndExtent="0.48" NeedleEndWidthRatio="0.02"
+             NeedlePivotStrokeThickness="0" NeedlePointFeatureExtent="0.18" NeedlePointFeatureWidthRatio="0"
+             NeedleStartExtent="-0.2" NeedleStartWidthRatio="0.05" NeedleStrokeThickness="0"
+             BackingBrush="#FFFFFF" BackingOutline="#FFFFFF" MinorTickBrush="#000000" NeedleBrush="#00C6A8" NeedleOutline="#FFFFFF"
+             NeedlePivotBrush="#FF3B37" NeedlePivotOutline="#FFFFFF" TickBrush="#000000">
+    <RadialGaugeRange EndValue="1" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.55" OuterStartExtent="0.5" StartValue="0" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="2" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.56" OuterStartExtent="0.55" StartValue="1" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="3" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.57" OuterStartExtent="0.56" StartValue="2" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="4" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.58" OuterStartExtent="0.57" StartValue="3" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="5" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.59" OuterStartExtent="0.58" StartValue="4" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="6" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.6" OuterStartExtent="0.59" StartValue="5" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="7" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.61" OuterStartExtent="0.6" StartValue="6" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="8" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.62" OuterStartExtent="0.61" StartValue="7" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="9" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.63" OuterStartExtent="0.62" StartValue="8" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="10" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.64" OuterStartExtent="0.63" StartValue="9" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="11" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.65" OuterStartExtent="0.64" StartValue="10" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="12" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.66" OuterStartExtent="0.65" StartValue="11" StrokeThickness="1.75" />
+    <RadialGaugeRange EndValue="13" InnerEndExtent="0.5" InnerStartExtent="0.5" OuterEndExtent="0.67" OuterStartExtent="0.66" StartValue="12" StrokeThickness="1.75" />
+</RadialGauge>
+
+@code {
+
+}

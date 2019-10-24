@@ -1,0 +1,14 @@
+﻿@page "/pie-chart"
+@using Infragistics.Blazor.Controls;
+@inject IgBlazorSamples.Services.ChartItemService data;
+
+<h1>Pie Chart</h1>
+
+<PieChart DataSource="@data.MarketShare" LabelMemberPath="Label" ValueMemberPath="Value" Width="500px" Height="500px" >
+
+</PieChart>
+
+@code
+{
+
+}

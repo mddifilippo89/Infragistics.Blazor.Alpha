@@ -1,0 +1,15 @@
+﻿@page "/financial-chart"
+@using Infragistics.Blazor.Controls;
+@inject IgBlazorSamples.Services.StockService data
+
+<h1>Financial Chart</h1>
+
+<FinancialChart Width="100%" Height="500px" DataSource="@data.StockMultipleSources">
+
+</FinancialChart>
+
+@code
+{
+
+}
+

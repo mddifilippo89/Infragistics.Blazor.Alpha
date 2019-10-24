@@ -1,15 +1,14 @@
-﻿using BlazorIGAlpha.Business;
+﻿using IgBlazorSamples.Business;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
-namespace BlazorIGAlpha.Services
+namespace IgBlazorSamples.Services
 {
     public class CategoryChartService
     {
-        public List<SixDataValueItem> SmallSixDataPtCollection { get; set; }
-        public List<SixDataValueItem> LargeSixDataPtCollection { get; set; }
-        public List<List<SingleDataValueItem>> CompoundCollection { get; set; }
+        public List<SixDataValueItem> SmallSixDataPtCollection { get; private set; }
+        public List<SixDataValueItem> LargeSixDataPtCollection { get; private set; }
+        public List<List<SingleDataValueItem>> CompoundCollection { get; private set; }
 
         public CategoryChartService()
         {

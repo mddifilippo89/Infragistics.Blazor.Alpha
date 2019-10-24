@@ -1,0 +1,77 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">IgBlazorSamples</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="datagrid" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Data Grid
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="category-chart" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Category Chart
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="financial-chart" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Financial Chart
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="doughnut-chart" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Doughnut Chart
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="pie-chart" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Pie Chart
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="sparkline" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Sparkline
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="bullet-graph" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Bullet Graph
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="linear-gauge" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Linear Gauge
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="radial-gauge" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Radial Gauge
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="map" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Map
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    bool collapseNavMenu = true;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

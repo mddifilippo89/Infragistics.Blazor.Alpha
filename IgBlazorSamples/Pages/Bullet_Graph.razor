@@ -1,0 +1,21 @@
+﻿@page "/bullet-graph"
+@using Infragistics.Blazor.Controls;
+
+<h1>Bullet Graph</h1>
+
+    <BulletGraph Width="500px" Height="100px"
+                 MinimumValue="5"
+                 MaximumValue="55"
+                 Value="35"
+                 TargetValue="43">
+        <LinearGraphRange StartValue="0"
+                          EndValue="15"/>
+        <LinearGraphRange StartValue="15"
+                          EndValue="30"/>
+        <LinearGraphRange StartValue="30"
+                          EndValue="55"/>
+    </BulletGraph>
+
+@code {
+
+}

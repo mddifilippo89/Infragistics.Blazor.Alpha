@@ -1,4 +1,4 @@
-﻿namespace BlazorIGAlpha.Business
+﻿namespace IgBlazorSamples.Business
 {
     public class SingleDataValueItem
     {

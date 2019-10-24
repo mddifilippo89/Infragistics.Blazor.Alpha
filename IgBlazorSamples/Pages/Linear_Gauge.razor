@@ -1,0 +1,24 @@
+﻿@page "/linear-gauge"
+@using Infragistics.Blazor.Controls;
+
+<h1>Linear Gauge</h1>
+
+<LinearGauge Width="600px" IsNeedleDraggingEnabled="true"
+                Height="70px"
+                MinimumValue="5"
+                MaximumValue="55"
+                Value="43">
+    <LinearGraphRange StartValue="0"
+                      EndValue="15"
+                      Brush="red" />
+    <LinearGraphRange StartValue="15"
+                      EndValue="30"
+                      Brush="yellow" />
+    <LinearGraphRange StartValue="30"
+                      EndValue="55"
+                      Brush="green" />
+</LinearGauge>
+
+@code {
+
+}

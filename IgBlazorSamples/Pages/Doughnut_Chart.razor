@@ -1,0 +1,25 @@
+﻿@page "/doughnut-chart"
+@using Infragistics.Blazor.Controls;
+@inject IgBlazorSamples.Services.ChartItemService data;
+
+<h1>Doughnut Chart</h1>
+
+<DoughnutChart Width="500px" Height="500px">
+    <RingSeries Name="Months" DataSource="@data.Months"
+                LabelsPosition="@LabelsPosition.Center"
+                LabelMemberPath="Label"
+                ValueMemberPath="Value"
+                RadiusFactor="0.9"
+                StartAngle="0" />
+    <RingSeries Name="Seasons" DataSource="@data.Seasons"
+                LabelsPosition="@LabelsPosition.InsideEnd"
+                LabelMemberPath="Label"
+                ValueMemberPath="Value"
+                RadiusFactor="0.4"
+                StartAngle="-30" />
+</DoughnutChart>
+
+@code
+{
+
+}

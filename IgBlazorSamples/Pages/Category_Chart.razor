@@ -1,0 +1,24 @@
+﻿@page "/category-chart"
+@using Infragistics.Blazor.Controls;
+@inject IgBlazorSamples.Services.CategoryChartService data;
+
+<h1>Category Chart</h1>
+
+<select @bind="SelectedChartType">
+    @foreach (var chartType in Enum.GetValues(typeof(CategoryChartType)))
+    {
+        <option>@chartType</option>
+    }
+</select>
+
+
+<CategoryChart ChartType="@SelectedChartType" DataSource="@data.LargeSixDataPtCollection"
+               ChartTitle="This is the Chart Title" Subtitle="A Chart Subtitle"
+               Width="100%" Height="500px">
+
+</CategoryChart>
+
+@code
+{
+    CategoryChartType SelectedChartType = CategoryChartType.Auto;
+}

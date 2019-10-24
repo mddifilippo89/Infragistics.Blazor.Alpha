@@ -1,0 +1,20 @@
+﻿@page "/sparkline"
+@using Infragistics.Blazor.Controls;
+@inject IgBlazorSamples.Services.ChartItemService data;
+
+<h1>Sparkline</h1>
+
+<select @bind="SelectedDisplayType">
+    @foreach (var chartType in Enum.GetValues(typeof(SparklineDisplayType)))
+    {
+        <option>@chartType</option>
+    }
+</select>
+
+<Sparkline DataSource="@data.SparklineData" DisplayType="@SelectedDisplayType" ValueMemberPath="Value" LabelMemberPath="Label"
+           Width="500px" Height="150px"></Sparkline>
+
+@code
+{
+    SparklineDisplayType SelectedDisplayType = SparklineDisplayType.Line;
+}
